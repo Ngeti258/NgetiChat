@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "471702210909",
+    "project_id": "ngetichat-application",
+    "storage_bucket": "ngetichat-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471702210909:android:c6eacab786b2ec9c8580b4",
+        "android_client_info": {
+          "package_name": "com.example.ngetichatapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471702210909-f7uut7s0ng5911urqok9l3cenhm0rrt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs6lFn30b5aqHrBLBtmfk372_xPerVQW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471702210909-f7uut7s0ng5911urqok9l3cenhm0rrt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
