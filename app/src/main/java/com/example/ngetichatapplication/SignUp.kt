@@ -42,8 +42,19 @@ class SignUp : AppCompatActivity() {
             val password = edtPassword.text.toString()
             val password_confirmation = edtPasswordConfirmation.text.toString()
 
-            if(password == password_confirmation){
+            if(name.isEmpty()){
+                edtName.error = "name is required"
+                return@setOnClickListener
+            }else if(email.isEmpty()){
+                edtEmail.error = "Email is required"
+                return@setOnClickListener
+            }else if(password.isEmpty()){
+                edtPassword.error = "Password is required"
+                return@setOnClickListener
+            }else if(password == password_confirmation){
                 signup(name,email ,password )
+            }else if(password_confirmation.isEmpty()){
+                 edtPasswordConfirmation.error= "Confirm your password"
             }else{
                 Toast.makeText(this@SignUp,"Passwords do not match",Toast.LENGTH_SHORT).show()
             }
