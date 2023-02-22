@@ -47,7 +47,7 @@ class Login : AppCompatActivity() {
     private fun login(email:String,password:String){
 //logic for logging in users
         mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+            .addOnCompleteListener(this)  { task ->
                 if (task.isSuccessful) {
                    //code for logging in user
                     val intent = Intent(this@Login,MainActivity::class.java)
