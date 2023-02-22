@@ -16,10 +16,6 @@ class Login : AppCompatActivity() {
     private lateinit var btnSignUp:Button
 
     private lateinit var mAuth: FirebaseAuth
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -41,7 +37,17 @@ class Login : AppCompatActivity() {
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
-            login(email,password)
+
+            if(email.isEmpty()){
+                edtEmail.error = "Email is required"
+                return@setOnClickListener
+            }else if(password.isEmpty()){
+                edtPassword.error = "Password is required"
+                return@setOnClickListener
+            }else {
+                login(email, password)
+            }
+
         }
     }
     private fun login(email:String,password:String){
@@ -54,7 +60,7 @@ class Login : AppCompatActivity() {
                     finish()
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@Login, "User does not exist", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Login, "incorrect username or password", Toast.LENGTH_SHORT).show()
                 }
             }
     }
