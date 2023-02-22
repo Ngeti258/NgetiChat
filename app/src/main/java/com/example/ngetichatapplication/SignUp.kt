@@ -15,6 +15,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var edtName : EditText
     private lateinit var edtEmail : EditText
     private lateinit var edtPassword : EditText
+    private lateinit var edtPasswordConfirmation:EditText
     private lateinit var btnSignUp : Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
@@ -32,14 +33,21 @@ class SignUp : AppCompatActivity() {
         edtName = findViewById(R.id.edt_name)
         edtEmail = findViewById(R.id.edt_email)
         edtPassword = findViewById(R.id.edt_password)
+        edtPasswordConfirmation = findViewById(R.id.edt_password_confirmation)
         btnSignUp = findViewById(R.id.btn_signup)
 
         btnSignUp.setOnClickListener{
             val name = edtName.text.toString()
             val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
+            val password_confirmation = edtPasswordConfirmation.text.toString()
 
-            signup(name,email ,password)
+            if(password == password_confirmation){
+                signup(name,email ,password )
+            }else{
+                Toast.makeText(this@SignUp,"Passwords do not match",Toast.LENGTH_SHORT).show()
+            }
+
         }
 
     }
